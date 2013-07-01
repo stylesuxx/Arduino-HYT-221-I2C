@@ -32,7 +32,7 @@ void loop() {
     humidity = 100.0 / pow(2,14) * rawHumidity;
     
     // combine temperature bytes and calculate temperature
-    b4 = (b4 &= 0x3F); //Mask away 2 least sign. bits see HYT 221 doc
+    b4 = (b4 >> 2); // Mask away 2 least significant bits see HYT 221 doc
     int rawTemperature = b3 << 6 | b4;
     temperature = 165.0 / pow(2,14) * rawTemperature - 40;
     
