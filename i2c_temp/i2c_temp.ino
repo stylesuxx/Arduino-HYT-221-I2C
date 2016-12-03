@@ -8,8 +8,8 @@ void setup() {
 }
 
 void loop() {
-  double humidity;
-  double temperature;
+  float humidity;
+  float temperature;
   
   Wire.beginTransmission(HYT_ADDR);   // Begin transmission with given device on I2C bus
   Wire.requestFrom(HYT_ADDR, 4);      // Request 4 bytes 
